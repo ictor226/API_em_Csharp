@@ -18,11 +18,20 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
+    - name: List files (debug)
+      run: ls -R
+
     - name: Restore dependencies
-      run: dotnet restore API_em_Csharp/API_em_Csharp.csproj
+      run: |
+        cd API_em_Csharp
+        dotnet restore
 
     - name: Build
-      run: dotnet build API_em_Csharp/API_em_Csharp.csproj --no-restore
+      run: |
+        cd API_em_Csharp
+        dotnet build --no-restore
 
     - name: Test
-      run: dotnet test API_em_Csharp/API_em_Csharp.csproj --no-build --verbosity normal
+      run: |
+        cd API_em_Csharp
+        dotnet test --no-build --verbosity normal
