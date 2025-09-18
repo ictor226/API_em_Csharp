@@ -17,16 +17,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
 app.PersonRoutes();
 
 app.UseHttpsRedirection(); 
 app.Run();
-
-
-
-
-
-
-
-
-
